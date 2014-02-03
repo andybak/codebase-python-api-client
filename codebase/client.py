@@ -48,6 +48,12 @@ class CodeBaseAPI(Auth):
     def statuses(self):
         return self._get('/%s/tickets/statuses' % self.project)
 
+    def tickets(self):
+        return self._get('/%s/tickets' % self.project)
+
+    def ticket(self, ticket_id):
+        return self._get('/%s/tickets/%s' % (self.project, ticket_id))
+
     def priorities(self):
         return self._get('/%s/tickets/priorities' % self.project)
 
